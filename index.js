@@ -67,8 +67,7 @@ const updateDocuments = async () => {
       { $set: { grades: 90 } }
     );
     console.log(
-      "Updated Academic Record:",
-      await AcademicRecord.findOne({ studentID: "001" })
+      "Updated Academic Record"
     );
   } catch (error) {
     console.error("Error:", error.message);
@@ -81,8 +80,7 @@ const deleteDocuments = async () => {
     const academicRecord = await AcademicRecord.findOne({ studentID: "001" });
     await academicRecord.deleteOne({ studentID: "001" });
     console.log(
-      "Deleted Academic Record:",
-      await AcademicRecord.findOne({ studentID: "001" })
+      "Deleted Academic Record"
     );
   } catch (error) {
     console.error("Error:", error.message);
@@ -91,5 +89,5 @@ const deleteDocuments = async () => {
 
 createDocuments();
 retrieveDocuments();
-updateDocuments();
-deleteDocuments();
+// updateDocuments();
+// deleteDocuments();
